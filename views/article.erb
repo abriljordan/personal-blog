@@ -1,4 +1,5 @@
 <h1><%= @article['title'] %></h1>
-<p><%= @article['content'] %></p>
 <p>Published on: <%= @article['date_published'].strftime("%B %d, %Y") if @article['date_published'].is_a?(Time) || @article['date_published'].is_a?(Date) %></p>
+
+<p><%= @article['content'] %></p>
 <a href="/">Back to Home</a>
