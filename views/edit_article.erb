@@ -5,10 +5,10 @@
     <input type="hidden" name="_method" value="patch">
 
     <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title" value="<%= @article['title'] %>" required><br><br>
+    <input type="text" id="title" name="title" value="<%= @article['title'] %>" required style="width: 70%; height: 40px;"><br><br>
 
     <label for="content">Content:</label><br>
-    <textarea id="content" name="content" rows="10" cols="30" required><%= @article['content'] %></textarea><br><br>
+    <textarea id="content" name="content" rows="10" cols="80" required><%= @article['content'] %></textarea><br><br>
 
     <label for="date">Date of Publication:</label><br>
     <input type="text" id="date" name="date_published" value="<%= @article['date_published'].strftime('%B %d, %Y') %>" required><br><br>
