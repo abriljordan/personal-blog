@@ -1,0 +1,6 @@
+admin:
+  username: admin
+  password: password
+
+# Set up Rack session
+use Rack::Session::Cookie, secret: '8b575142db8f2b0a6330fe09e723d507725aa25e640397c786acc0f57f6b65ec95f96ff37bc63f1f1d074bec8f916f3be9505337c9f4ada9ec60f1e7844a5c3aaa13a2642e640e58a015e23786c5033f55a4250ac37feff50c779eba33050dce194528e7100e0502583175aa56fca88e636eb5f24df66e20d0cc4d42431e502a'
