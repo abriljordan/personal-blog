@@ -1,0 +1,8 @@
+<ul class="article-list">
+  <% @articles.each do |article| %>
+    <li class="article-item">
+      <a href="/article/<%= article['id'] %>" class="article-title"><%= article['title'] %></a>
+      <span class="article-date"><%= article['date_published'] %></span>
+    </li>
+  <% end %>
+</ul>

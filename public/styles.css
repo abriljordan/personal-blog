@@ -1,0 +1,152 @@
+/* styles.css */
+
+/* Overall layout container */
+.layout-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, content, footer */
+  gap: 20px;
+  width: 90%; /* Set a responsive width */
+  height: 100vh;
+  max-width: 900px; /* Maximum width for the layout */
+  margin: 0 auto; /* Center the layout */
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout-header h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.layout-header nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Main content area */
+.layout-content {
+  padding: 15px 0;
+}
+
+/* Footer styles */
+.layout-footer {
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Optional: Removes default padding */
+  margin: 0; /* Optional: Removes default margin */
+}
+
+ul li {
+  text-decoration: none; /* Remove underline from list items */
+  margin-bottom: 10px; /* Adds space between items */
+}
+
+ul li a {
+  text-decoration: none; /* Remove underline from links inside list items */
+}
+
+
+
+/* Style for the table container */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c9302c;
+}
+
+
+/* Style for the index/home page */
+/* styles.css */
+
+.article-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.article-item {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space title and date apart */
+  align-items: center; /* Center items vertically */
+  padding: 10px 0; /* Add padding for spacing */
+  border-bottom: 1px solid #ddd; /* Optional: add a bottom border */
+}
+
+.article-title {
+  font-size: 1.5em; /* Larger font size for the title */
+  font-weight: bold; /* Bold font for the title */
+  text-decoration: none; /* Remove underline from link */
+  color: #333; /* Title color */
+}
+
+.article-title:hover {
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+.article-date {
+  font-size: 1.2em; /* Larger font size for the date */
+  color: #888; /* Color for the date */
+}
+
+/* Admin buttons */
+.admin-buttons {
+  display: flex; /* Use flexbox for button alignment */
+  gap: 10px; /* Space between buttons */
+}
+
+.edit-button,
+.delete-button {
+  padding: 5px 10px; /* Add some padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Round the corners */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove underline from link */
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}

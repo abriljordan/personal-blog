@@ -1,0 +1,14 @@
+<a href="/admin/new">Add New Article</a>
+<ul class="article-list">
+  <% @articles.each do |article| %>
+    <li class="article-item">
+      <a href="/admin/edit/<%= article['id'] %>" class="article-title"><%= article['title'] %></a>
+      <div class="admin-buttons">
+        <a href="/admin/edit/<%= article['id'] %>" class="edit-button">Edit</a>
+        <form action="/admin/delete/<%= article['id'] %>" method="post" style="display:inline">
+          <button type="submit" class="delete-button">Delete</button>
+        </form>
+      </div>
+    </li>
+  <% end %>
+</ul>
