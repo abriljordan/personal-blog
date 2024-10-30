@@ -2,7 +2,9 @@
   <% @articles.each do |article| %>
     <li class="article-item">
       <a href="/article/<%= article['id'] %>" class="article-title"><%= article['title'] %></a>
-      <span class="article-date"><%= article['date_published'] %></span>
+      <span class="article-date">
+        <%= article['date_published'].strftime("%B %d, %Y") if article['date_published'].is_a?(Time) || article['date_published'].is_a?(Date) %>
+      </span>
     </li>
   <% end %>
 </ul>

@@ -1,7 +1,7 @@
 <h1>Edit Article</h1>
 
 <turbo-frame id="main">
-  <form action="/admin/edit/<%= @article_id %>" method="post" data-turbo="true">
+  <form action="/admin/edit/<%= @article.id %>" method="post" data-turbo="true">
     <input type="hidden" name="_method" value="patch">
 
     <label for="title">Title:</label><br>
@@ -11,8 +11,10 @@
     <textarea id="content" name="content" rows="10" cols="30" required><%= @article['content'] %></textarea><br><br>
 
     <label for="date">Date of Publication:</label><br>
-    <input type="text" id="date" name="date" value="<%= @article['date'] %>" readonly><br><br>
+    <input type="text" id="date" name="date_published" value="<%= @article['date_published'].strftime('%B %d, %Y') %>" required><br><br>
 
     <button type="submit">Update Article</button>
   </form>
 </turbo-frame>
+
+<a href="/admin">Back to Dashboard</a>

@@ -13,18 +13,22 @@ ActiveRecord::Base.establish_connection(
   database: 'blog.db'
 )
 
-# Create articles table
-ActiveRecord::Base.connection.execute <<-SQL
-  CREATE TABLE articles (
-    id TEXT PRIMARY KEY,
-    title TEXT,
-    content TEXT,
-    date_published DATETIME
-  );
-SQL
+# Create articles table only if it doesn't exist
+
 
 # Define Article model
 class Article < ActiveRecord::Base
+end
+
+unless Article.table_exists?
+  ActiveRecord::Base.connection.execute <<-SQL
+    CREATE TABLE articles (
+      id TEXT PRIMARY KEY,
+      title TEXT,
+      content TEXT,
+      date_published DATETIME
+    );
+  SQL
 end
 
 # Set up session
@@ -80,7 +84,7 @@ post '/admin/new' do
     id: SecureRandom.uuid,
     title: params[:title],
     content: params[:content],
-    date_published: Time.now
+    date_published: Time.strptime(params[:date_published], "%B %d, %Y") # Parsing the date
   )
   article.save
   redirect '/admin'
@@ -98,6 +102,10 @@ post '/admin/edit/:id' do
   article = Article.find(params[:id])
   article.title = params[:title]
   article.content = params[:content]
+
+  # Parse the date from the form input
+  article.date_published = Time.strptime(params[:date_published], "%B %d, %Y")
+
   article.save
   redirect '/admin'
 end
