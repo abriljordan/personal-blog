@@ -3,6 +3,8 @@ Project URL: https://roadmap.sh/projects/personal-blog
 
 A simple personal blog built with Sinatra and ActiveRecord, allowing users to create, edit, and delete articles. This blog includes an admin dashboard for managing content and a public-facing homepage to display articles.
 
+This project has been built with the assistance of AI.
+
 ## Features
 
 - User authentication for admin access
